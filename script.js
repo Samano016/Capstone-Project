@@ -22,8 +22,6 @@ function handleLogin() {
         .then((userCredential) => {
             console.log("Welcome back:", userCredential.user.email);
             // Hide login, show welcome
-            document.getElementById('login-screen').classList.add('hidden');
-            document.getElementById('welcome-screen').classList.remove('hidden');
         })
         .catch((error) => {
             alert("Login Error: " + error.message);
@@ -38,8 +36,6 @@ function handleSignUp() {
     auth.createUserWithEmailAndPassword(email, pass)
         .then((userCredential) => {
             alert("Account created! You are now logged in.");
-            document.getElementById('login-screen').classList.add('hidden');
-            document.getElementById('welcome-screen').classList.remove('hidden');
         })
         .catch((error) => {
             alert("Registration Error: " + error.message);
