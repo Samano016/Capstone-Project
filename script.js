@@ -153,10 +153,17 @@ function completeModule() {
 
 // Back to Home
 function showHome() {
-    const screens = ['module-content', 'finance-menu', 'career-menu', 'digital-menu'];
-    screens.forEach(id => document.getElementById(id).classList.add('hidden'));
-    document.getElementById('welcome-screen').classList.remove('hidden');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Hide every section first
+    const sections = document.querySelectorAll('section');
+    sections.forEach(s => s.classList.add('hidden'));
+
+    // Show the welcome screen if the user is logged in
+    if (firebase.auth().currentUser) {
+        document.getElementById('welcome-screen').classList.remove('hidden');
+    } else {
+        document.getElementById('login-screen').classList.remove('hidden');
+    }
+}
 }
 
 function checkPractice(choice) {
