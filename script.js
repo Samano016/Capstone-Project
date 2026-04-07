@@ -48,7 +48,11 @@ function handleSignUp() {
 //Log out of the session
 function handleLogout() {
     auth.signOut().then(() => {
-        alert("Logged out successfully");
+        console.log("User logged out");
+    }).catch((error) => {
+        alert("Logout Error: " + error.message);
+    });
+}
 
 // Data variable
 let moduleData = {};
