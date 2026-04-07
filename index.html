@@ -17,6 +17,18 @@
     </header>
 
     <main id="app-container">
+        <section id="login-screen" class="welcome-container">
+        <h2 class="welcome-title">Student Login</h2>
+        <p class="welcome-subtitle">Welcome back! Please sign in to continue your journey.</p>
+        
+        <div style="max-width: 320px; margin: 20px auto; display: flex; flex-direction: column; gap: 15px;">
+            <input type="email" id="student-email" placeholder="School Email" style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
+            <input type="password" id="student-pass" placeholder="Password" style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
+            
+            <button class="start-btn" onclick="handleLogin()" style="width: 100%;">Login</button>
+            <button class="lesson-btn" onclick="handleSignUp()" style="width: 100%; background-color: #7f8c8d;">Create Account</button>
+        </div>
+    </section>
         
         <section id="welcome-screen" class="welcome-container">
             <h2 class="welcome-title">Welcome to Adulting 101</h2>
@@ -147,7 +159,7 @@
             </div>
         </section>
     </main>
-
+    
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
