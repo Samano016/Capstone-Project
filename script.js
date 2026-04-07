@@ -45,6 +45,10 @@ function handleSignUp() {
             alert("Registration Error: " + error.message);
         });
 }
+//Log out of the session
+function handleLogout() {
+    auth.signOut().then(() => {
+        alert("Logged out successfully");
 
 // Data variable
 let moduleData = {};
