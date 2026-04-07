@@ -164,7 +164,6 @@ function showHome() {
         document.getElementById('login-screen').classList.remove('hidden');
     }
 }
-}
 
 function checkPractice(choice) {
     const feedbackBox = document.getElementById('practice-feedback');
