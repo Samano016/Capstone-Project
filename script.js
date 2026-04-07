@@ -1,3 +1,21 @@
+// Firebase connection
+const firebaseConfig = {
+  apiKey: "AIzaSyArFJPMUnY1MTcnNUYk7lO3_mbiY-52sfo",
+  authDomain: "adulting101-7e9de.firebaseapp.com",
+  projectId: "adulting101-7e9de",
+  storageBucket: "adulting101-7e9de.firebasestorage.app",
+  messagingSenderId: "447222841291",
+  appId: "1:447222841291:web:6e2490d9e5fc555e09c04e",
+  measurementId: "G-7RPX9GHKRN"
+};
+
+// Run Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Shortcuts for the tools
+const auth = firebase.auth();
+const db = firebase.firestore();
+
 // Data variable
 let moduleData = {};
 
