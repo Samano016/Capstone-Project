@@ -280,8 +280,15 @@ button:hover {
 .results-display {
     margin-top: 15px;
     padding: 10px;
-    background: #e8f5e9; /* Light mint green */
+    background: #e8f5e9; /* Light green */
     border-radius: 6px;
     font-weight: bold;
     color: #1b5e20;
+}
+
+.tool-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.4;
 }
