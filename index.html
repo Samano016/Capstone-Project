@@ -58,58 +58,66 @@
         </section>
 
         <section id="finance-menu" class="hidden">
-            <div class="menu-header">
-                <h2 class="finance-text">Finance Topics</h2>
-                <p>Select a lesson to begin mastering your money.</p>
-            </div>
-            <div class="topic-grid">
-                <div class="topic-card" onclick="startLesson('finance_intro')">
-                    <div class="icon"></div>
-                    <h3>Intro - What is Financial Literacy?</h3>
-                    <button class="lesson-btn">Start Lesson</button>
-                </div>
-                <div class="tools-section">
-    <h3 class="finance-text">Interactive Finance Tools</h3>
-    <div class="tool-container">
-        <div class="tool-card">
-            <h4>50/30/20 Budget Calculator</h4>
-            <p>Enter your monthly income to see your breakdown:</p>
-            <input type="number" id="budget-input" placeholder="e.g. 2000" oninput="calculateBudget()">
-            <div id="budget-results" class="results-display">
-                <p><strong>Needs (50%):</strong> $<span id="needs-val">0</span></p>
-                <p><strong>Wants (30%):</strong> $<span id="wants-val">0</span></p>
-                <p><strong>Savings (20%):</strong> $<span id="savings-val">0</span></p>
-            </div>
-        </div>
+    <div class="menu-header">
+        <h2 class="finance-text">Finance Topics</h2>
+        <p>Select a lesson to begin mastering your money.</p>
+    </div>
 
-        <div class="tool-card">
-            <h4>Cost in Work-Hours</h4>
-            <p>How many hours must you work to buy that item?</p>
-            <input type="number" id="item-cost" placeholder="Item Price ($)" oninput="calculateHours()">
-            <input type="number" id="hourly-wage" placeholder="Hourly Wage ($)" oninput="calculateHours()">
-            <div id="hours-results" class="results-display">
-                <p>You need to work: <strong><span id="hours-needed">0</span> hours</strong></p>
+    <div class="topic-grid">
+        <div class="topic-card" onclick="startLesson('finance_intro')">
+            <div class="icon"></div>
+            <h3>Intro - What is Financial Literacy?</h3>
+            <button class="lesson-btn">Start Lesson</button>
+        </div>
+        <div class="topic-card" onclick="startLesson('finance_using')">
+            <div class="icon"></div>
+            <h3>Using Money</h3>
+            <button class="lesson-btn">Start Lesson</button>
+        </div>
+        <div class="topic-card" onclick="startLesson('finance_decisions')">
+            <div class="icon"></div>
+            <h3>Smart Decisions</h3>
+            <button class="lesson-btn">Start Lesson</button>
+        </div>
+        <div class="topic-card" onclick="startLesson('finance_earning')">
+            <div class="icon"></div>
+            <h3>How to Make Money</h3>
+            <button class="lesson-btn">Start Lesson</button>
+        </div>
+    </div>
+
+    <div class="tools-section">
+        <h3 class="finance-text">Interactive Finance Tools</h3>
+        <div class="tool-container">
+            <div class="tool-card">
+                <h4>50/30/20 Budget Calculator</h4>
+                <input type="number" id="budget-input" placeholder="Monthly Income ($)" oninput="calculateBudget()">
+                <div class="results-display">
+                    <p>Needs: $<span id="needs-val">0</span> | Wants: $<span id="wants-val">0</span> | Savings: $<span id="savings-val">0</span></p>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <h4>Cost in Work-Hours</h4>
+                <input type="number" id="item-cost" placeholder="Item Price ($)" oninput="calculateHours()">
+                <input type="number" id="hourly-wage" placeholder="Hourly Wage ($)" oninput="calculateHours()">
+                <div class="results-display">
+                    <p>Work needed: <strong><span id="hours-needed">0</span> hours</strong></p>
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <h4>Savings Simulator</h4>
+                <input type="number" id="compound-principal" placeholder="Start Balance ($)" oninput="calculateCompound()">
+                <input type="number" id="compound-monthly" placeholder="Monthly Add ($)" oninput="calculateCompound()">
+                <input type="number" id="compound-years" placeholder="Years" oninput="calculateCompound()">
+                <div class="results-display">
+                    <p>Future Total: <strong>$<span id="compound-total">0</span></strong></p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-                <div class="topic-card" onclick="startLesson('finance_using')">
-                    <div class="icon"></div>
-                    <h3>Using Money</h3>
-                    <button class="lesson-btn">Start Lesson</button>
-                </div>
-                <div class="topic-card" onclick="startLesson('finance_decisions')">
-                    <div class="icon"></div>
-                    <h3>Smart Decisions</h3>
-                    <button class="lesson-btn">Start Lesson</button>
-                </div>
-                <div class="topic-card" onclick="startLesson('finance_earning')">
-                    <div class="icon"></div>
-                    <h3>How to Make Money</h3>
-                    <button class="lesson-btn">Start Lesson</button>
-                </div>
-            </div>
-        </section>
+</section>
 
         <section id="career-menu" class="hidden">
             <div class="menu-header">
