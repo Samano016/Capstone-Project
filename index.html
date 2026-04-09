@@ -91,6 +91,7 @@
         <div class="tool-container">
     <div class="tool-card">
         <h4>50/30/20 Budget Calculator</h4>
+        <p class="tool-desc">Divide your income: 50% for needs, 30% for wants, and 20% for savings.</p>
         <input type="number" id="budget-input" placeholder="Monthly Income ($)" oninput="calculateBudget()">
         <div class="results-display">
             <p>Needs: $<span id="needs-val">0</span> | Wants: $<span id="wants-val">0</span> | Savings: $<span id="savings-val">0</span></p>
@@ -99,6 +100,7 @@
 
     <div class="tool-card">
         <h4>Cost in Work-Hours</h4>
+        <p class="tool-desc">See how many hours you actually have to work to pay for a specific item.</p>
         <input type="number" id="item-cost" placeholder="Item Price ($)" oninput="calculateHours()">
         <input type="number" id="hourly-wage" placeholder="Hourly Wage ($)" oninput="calculateHours()">
         <div class="results-display">
@@ -108,6 +110,7 @@
 
     <div class="tool-card">
         <h4>Savings Simulator</h4>
+        <p class="tool-desc">Watch how your money grows over time when you save a little bit every month.</p>
         <input type="number" id="compound-principal" placeholder="Start Balance ($)" oninput="calculateCompound()">
         <input type="number" id="compound-monthly" placeholder="Monthly Add ($)" oninput="calculateCompound()">
         <input type="number" id="compound-years" placeholder="Years" oninput="calculateCompound()">
@@ -118,6 +121,7 @@
 
     <div class="tool-card">
         <h4>Loan Monthly Payment</h4>
+        <p class="tool-desc">Calculate what your monthly bill would be for a car or personal loan.</p>
         <input type="number" id="loan-amount" placeholder="Loan Amount ($)" oninput="calculateLoan()">
         <input type="number" id="loan-rate" placeholder="Interest Rate (%)" oninput="calculateLoan()">
         <input type="number" id="loan-years" placeholder="Years" oninput="calculateLoan()">
