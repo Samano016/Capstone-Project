@@ -248,17 +248,20 @@ button:hover {
 }
 
 .tool-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap; /* Cards jump to the next row if they don't fit */
     gap: 20px;
-    padding: 20px 0;
+    justify-content: center;
 }
 
 .tool-card {
+    flex: 1;
+    min-width: 280px; /* Cards won't get too skinny */
+    max-width: 350px;
     background: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .tool-card input {
