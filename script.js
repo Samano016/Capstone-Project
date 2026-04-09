@@ -244,7 +244,63 @@ function calculateLoan() {
 }
 
 // Career Exploration Tools
+// --- 1. Resume Red Flags Logic ---
+let flagsFound = 0;
 
+function flagFound(element) {
+    // Only count it if it hasn't been clicked yet
+    if (!element.classList.contains('found')) {
+        element.classList.add('found');
+        flagsFound++;
+
+        // If they found all 3, hide the bad resume and show the Level 100 one
+        if (flagsFound === 3) {
+            setTimeout(() => {
+                document.getElementById('bad-resume').classList.add('hidden');
+                document.getElementById('good-resume').classList.remove('hidden');
+            }, 500); // 500ms delay so they can see the final click
+        }
+    }
+}
+
+// --- 2. Workplace Scenarios Logic ---
+function checkScenario(choice) {
+    const feedbackBox = document.getElementById('scenario-feedback');
+    feedbackBox.classList.remove('hidden');
+
+    if (choice === 'A') {
+        feedbackBox.innerHTML = "❌ <strong>Careful!</strong> Arguing immediately can seem defensive. Take a breath first.";
+        feedbackBox.style.color = "#c0392b";
+    } else if (choice === 'B') {
+        feedbackBox.innerHTML = "✅ <strong>Spot on!</strong> Listening and asking clarifying questions shows maturity and a willingness to grow.";
+        feedbackBox.style.color = "#27ae60";
+    } else if (choice === 'C') {
+        feedbackBox.innerHTML = "❌ <strong>Not quite.</strong> Ignoring feedback means you miss a chance to improve and might frustrate your boss.";
+        feedbackBox.style.color = "#c0392b";
+    }
+}
+
+// --- 3. 100th Day Goal Setter Logic ---
+function saveGoals() {
+    const g1 = document.getElementById('goal1').value;
+    const g2 = document.getElementById('goal2').value;
+    const g3 = document.getElementById('goal3').value;
+    const displayBox = document.getElementById('goals-display');
+
+    if (g1 && g2 && g3) {
+        displayBox.classList.remove('hidden');
+        displayBox.innerHTML = `
+            <strong>Your 100-Day Plan:</strong><br>
+            1. ${g1}<br>
+            2. ${g2}<br>
+            3. ${g3}<br>
+            <em>Screenshot this to hold yourself accountable!</em>
+        `;
+        displayBox.style.color = "#2980b9";
+    } else {
+        alert("Please fill out all 3 goals before committing!");
+    }
+}
 
 // Digital Citizenship Tools
 
