@@ -98,24 +98,15 @@
             </div>
 
             <div class="tool-card">
-                <h4>Cost in Work-Hours</h4>
-                <input type="number" id="item-cost" placeholder="Item Price ($)" oninput="calculateHours()">
-                <input type="number" id="hourly-wage" placeholder="Hourly Wage ($)" oninput="calculateHours()">
-                <div class="results-display">
-                    <p>Work needed: <strong><span id="hours-needed">0</span> hours</strong></p>
-                </div>
-            </div>
-
+    <h4>Savings Simulator</h4>
+    <input type="number" id="compound-principal" placeholder="Start Balance ($)" oninput="calculateCompound()">
+    <input type="number" id="compound-monthly" placeholder="Monthly Add ($)" oninput="calculateCompound()">
+    <input type="number" id="compound-years" placeholder="Years" oninput="calculateCompound()">
+    <div class="results-display">
+        <p>Future Total: <strong>$<span id="compound-total">0</span></strong></p>
+    </div>
+</div> 
             <div class="tool-card">
-                <h4>Savings Simulator</h4>
-                <input type="number" id="compound-principal" placeholder="Start Balance ($)" oninput="calculateCompound()">
-                <input type="number" id="compound-monthly" placeholder="Monthly Add ($)" oninput="calculateCompound()">
-                <input type="number" id="compound-years" placeholder="Years" oninput="calculateCompound()">
-                <div class="results-display">
-                    <p>Future Total: <strong>$<span id="compound-total">0</span></strong></p>
-                </div>
-
-                <div class="tool-card">
     <h4>Loan Monthly Payment</h4>
     <input type="number" id="loan-amount" placeholder="Loan Amount ($)" oninput="calculateLoan()">
     <input type="number" id="loan-rate" placeholder="Interest Rate (%)" oninput="calculateLoan()">
@@ -123,7 +114,7 @@
     <div class="results-display">
         <p>Monthly Payment: <strong>$<span id="monthly-payment">0</span></strong></p>
     </div>
-</div>
+</div>                
             </div>
         </div>
     </div>
