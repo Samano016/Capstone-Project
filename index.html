@@ -14,6 +14,7 @@
     <button class="nav-btn" onclick="loadModule('career')">Career Exploration</button>
     <button class="nav-btn" onclick="loadModule('digital')">Digital Citizenship</button>
     <button class="nav-btn" onclick="toggleDarkMode()" id="dark-mode-toggle"> Dark Mode</button>
+    <button class="nav-btn" onclick="loadModule('sources')">Sources</button>
     <button class="nav-btn" onclick="handleLogout()">Logout</button>
             
 
@@ -230,6 +231,33 @@
             </div>
         </section>
 
+        <section id="sources-menu" class="hidden">
+    <div class="menu-header">
+        <h2>Sources & Bibliography</h2>
+        <p>The data and logic used in these tools are based on the following professional standards and resources.</p>
+    </div>
+
+    <div class="tool-card" style="max-width: 800px; margin: 20px auto; text-align: left;">
+        <h3 style="color: #2e7d32;">Finance Data</h3>
+        <ul>
+            <li><strong>50/30/20 Rule:</strong> Popularized by Senator Elizabeth Warren in <em>All Your Worth</em>.</li>
+            <li><strong>Loan Calculations:</strong> Based on standard amortization formulas used by institutions like the USDA for home loans.</li>
+        </ul>
+
+        <h3 style="color: #2980b9;">Career Readiness</h3>
+        <ul>
+            <li><strong>Competencies:</strong> Based on the <strong>NACE</strong> (National Association of Colleges and Employers) career readiness standards.</li>
+            <li><strong>Resume Best Practices:</strong> Adapted from university career center guidelines and professional recruitment standards.</li>
+        </ul>
+
+        <h3 style="color: #8e44ad;">Digital Citizenship</h3>
+        <ul>
+            <li><strong>Online Safety:</strong> Concepts adapted from <strong>Common Sense Education</strong> frameworks.</li>
+            <li><strong>AI Detection:</strong> Research regarding GAN (Generative Adversarial Network) artifacts and anatomical inconsistencies in AI art.</li>
+        </ul>
+    </div>
+</section>
+        
         <section id="module-content" class="hidden">
             <h2 id="module-title">Module Title</h2>
             
