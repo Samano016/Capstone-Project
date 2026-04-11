@@ -30,6 +30,50 @@
           "Losing money on risky investments or 'get rich quick' schemes."
         ]
       },
+  "career_readiness_data": {
+    "header": "Career Readiness",
+    "image": "career_readiness_chart.png", 
+    "sections": [
+      {
+        "title": "1. What is Career Readiness?",
+        "description": "Employability is about having the skills needed to get and keep a job. In the U.S., this is often called career readiness. It focuses on:",
+        "list": [
+          "<strong>Communication:</strong> being able to express ideas clearly and listen effectively.",
+          "<strong>Critical Thinking:</strong> solving complex problems and making informed decisions.",
+          "<strong>Teamwork:</strong> collaborating well with diverse groups of people.",
+          "<strong>Responsibility:</strong> being reliable, ethical, and managing your tasks.",
+          "<strong>Technology:</strong> using the digital tools and systems needed for modern work."
+        ]
+      },
+      {
+        "title": "2. The Shift: Schools & Jobs",
+        "description": "College is a major investment, and there is a growing expectation that schools must prove students are job-ready.",
+        "list": [
+          "<strong>Rising Costs:</strong> Families want a clear return on investment (ROI) for their education.",
+          "<strong>Job Market Pressure:</strong> Employers often report that graduates aren't fully prepared for the workplace.",
+          "<strong>Changing Economy:</strong> The 'gig economy' and automation require more flexible, adaptable skills."
+        ]
+      },
+      {
+        "title": "3. Why This Matters to You",
+        "description": "If students aren't career ready, they may face significant hurdles after graduation, including:",
+        "list": [
+          "Difficulty finding or landing a first 'career-track' job.",
+          "Lacking the soft skills that managers value most for promotions.",
+          "Struggling to adapt as technology changes their specific industry over time."
+        ]
+      },
+      {
+        "title": "4. The Challenges with Employability",
+        "description": "Focusing solely on 'employability' isn't always simple. There are systemic hurdles to consider:",
+        "list": [
+          "<strong>Measurement:</strong> It is hard to prove someone has 'leadership' or 'ethics' through a standard test.",
+          "<strong>Equity Issues:</strong> Students from lower-income backgrounds often have less access to high-quality internships.",
+          "<strong>Outside Factors:</strong> Economic downturns can affect job outcomes regardless of how 'ready' a student is."
+        ]
+      }
+    ]
+},
       {
         "title": "4. Simple Solutions: Schools and Jobs",
         "description": "Money has become more complicated, so financial literacy should be treated like reading or writing.",
