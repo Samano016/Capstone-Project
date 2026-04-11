@@ -180,6 +180,10 @@ function loadModule(moduleKey) {
         }
         if (moduleKey === 'digital') {
             renderDigitalFundamentals();
+          if (moduleData.digital_citizenship_data && moduleData.digital_citizenship_data.footprintQuiz) {
+        renderScorecard(moduleData.digital_citizenship_data.footprintQuiz);
+    }
+          
         }
     } else {
         console.error("Menu ID not found:", targetId);
@@ -231,13 +235,13 @@ function populateContent(data) {
         });
     }
 
-    // Clear old quiz options and hide the finish button
+    // Clear old quiz options
     const quizContainer = document.getElementById('quiz-interaction');
-    const finishBtn = document.getElementById('finish-btn'); // Grabs the finish button
+    const finishBtn = document.getElementById('finish-btn'); // Finish button
     
     if (quizContainer) {
         quizContainer.innerHTML = ''; 
-        // We will make a new dedicated feedback box for the quiz inside the container
+        // Feedback box for the quiz 
         const quizFeedback = document.createElement('div');
         quizFeedback.id = 'quiz-feedback';
         quizFeedback.className = 'feedback-box hidden';
@@ -271,16 +275,16 @@ function checkQuiz(choice) {
         feedbackBox.style.backgroundColor = "#d4edda"; // Success Green
         feedbackBox.style.color = "#155724";
         feedbackBox.style.borderColor = "#c3e6cb";
-        finishBtn.classList.remove('hidden'); // Reveal the "Finish Lesson" button
+        finishBtn.classList.remove('hidden'); // Finish Lesson button
     } else {
         feedbackBox.style.backgroundColor = "#f8d7da"; // Error 
         feedbackBox.style.color = "#721c24";
         feedbackBox.style.borderColor = "#f5c6cb";
-        finishBtn.classList.add('hidden'); // The finish button is hidden until correct
+        finishBtn.classList.add('hidden'); // The finish button remains hidden 
     }
 }
 
-// LPC Logic: Moving through Lecture -> Practice -> Quiz
+// LPC: Moving through Lecture -> Practice -> Quiz
 function nextStage(stageId) {
     const stages = document.querySelectorAll('.lpc-stage');
     stages.forEach(stage => stage.classList.add('hidden'));
@@ -355,26 +359,26 @@ function calculateLoan() {
 }
 
 // Career Exploration Tools
-// --- 1. Resume Red Flags Logic ---
+// Resume Red Flags 
 let flagsFound = 0;
 
 function flagFound(element) {
-    // Only count it if it hasn't been clicked yet
+    // Only count it if it hasn't been clicked
     if (!element.classList.contains('found')) {
         element.classList.add('found');
         flagsFound++;
 
-        // If they found all 3, hide the bad resume and show the Level 100 one
+        // Hide the bad resume and show the correct version
         if (flagsFound === 3) {
             setTimeout(() => {
                 document.getElementById('bad-resume').classList.add('hidden');
                 document.getElementById('good-resume').classList.remove('hidden');
-            }, 500); // 500ms delay so they can see the final click
+            }, 500); // 500ms delay 
         }
     }
 }
 
-// --- 2. Workplace Scenarios Logic ---
+// Workplace Scenarios 
 function checkScenario(choice) {
     const feedbackBox = document.getElementById('scenario-feedback');
     feedbackBox.classList.remove('hidden');
@@ -391,7 +395,7 @@ function checkScenario(choice) {
     }
 }
 
-// --- 3. 100th Day Goal Setter Logic ---
+// 100th Day Goal Setter 
 function saveGoals() {
     const g1 = document.getElementById('goal1').value;
     const g2 = document.getElementById('goal2').value;
@@ -414,7 +418,66 @@ function saveGoals() {
 }
 
 // Digital Citizenship Tools
+// Digital habits
+function renderScorecard(quizArray) {
+    const container = document.getElementById('footprint-questions-container');
+    if (!container) return; 
+    
+    container.innerHTML = ""; 
 
+    // Loop through the data we just pulled from the JSON
+    quizArray.forEach(item => {
+        container.innerHTML += `
+            <li style="margin-bottom: 10px;">
+                ${item.q} 
+                <select class="score-select">
+                    <option value="10">${item.s}</option>
+                    <option value="0">${item.r}</option>
+                </select>
+            </li>
+        `;
+    });
+}
+
+// Password Strength Tool
+function checkPasswordStrength() {
+    const password = document.getElementById('password-input').value;
+    const resultDiv = document.getElementById('password-result');
+    if (!password) { resultDiv.innerText = "Awaiting input..."; return; }
+
+    let strength = 0;
+    if (password.length >= 8) strength++;
+    if (/[A-Z]/.test(password)) strength++;
+    if (/[0-9]/.test(password)) strength++;
+    if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+    if (strength <= 1) {
+        resultDiv.innerHTML = "🔴 Weak";
+        resultDiv.style.color = "#c0392b";
+    } else if (strength <= 3) {
+        resultDiv.innerHTML = "🟡 Moderate";
+        resultDiv.style.color = "#b7950b";
+    } else {
+        resultDiv.innerHTML = "🟢 Strong";
+        resultDiv.style.color = "#27ae60";
+    }
+}
+
+// Scorecard Calculation 
+function calculateFootprint() {
+    const selects = document.querySelectorAll('.score-select');
+    let totalScore = 0;
+
+    selects.forEach(select => {
+        totalScore += parseInt(select.value);
+    });
+
+    const resultDiv = document.getElementById('footprint-result');
+    resultDiv.classList.remove('hidden');
+    
+    let message = totalScore >= 80 ? "🏆 Digital Guard!" : totalScore >= 50 ? "⚠️ Average User" : "🛑 High Risk";
+    resultDiv.innerHTML = `<strong>Score: ${totalScore}/100</strong><br>${message}`;
+}
 
 // Return to Sub-Menu 
 function completeModule() {
