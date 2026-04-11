@@ -84,6 +84,52 @@
       }
     ]
   },
+"digital_citizenship_data": {
+    "header": "Digital Citizenship",
+    "image": "digital_citizenship_icon.png",
+    "sections": [
+      {
+        "title": "1. What is Media Literacy and Digital Citizenship?",
+        "description": "Understanding and using social media in a smart and responsible way focuses on:",
+        "list": [
+          "<strong>Media Literacy:</strong> Understanding, analyzing, and creating media content.",
+          "<strong>Critical Thinking:</strong> Checking if information is true or biased.",
+          "<strong>Digital Citizenship:</strong> Using technology in a responsible and ethical way.",
+          "<strong>Online Behavior:</strong> Respecting others and staying safe online."
+        ]
+      },
+      {
+        "title": "2. The Impact of Social Media",
+        "description": "Social media has fundamentally changed how we get and share information:",
+        "list": [
+          "<strong>Fast Information:</strong> News and content spread across the globe instantly.",
+          "<strong>User Content:</strong> Anyone can create and share their own media.",
+          "<strong>Global Connection:</strong> Communicating worldwide is easier than ever.",
+          "<strong>Challenges:</strong> Navigating misinformation, privacy issues, and online harassment."
+        ]
+      },
+      {
+        "title": "3. Why This Matters to You",
+        "description": "Without these skills, navigating the digital world can lead to significant struggles:",
+        "list": [
+          "Believing false or misleading information (Fake News).",
+          "Sharing content without checking for accuracy.",
+          "Facing issues with personal privacy or online safety.",
+          "Engaging in negative or harmful online behavior."
+        ]
+      },
+      {
+        "title": "4. The Challenges",
+        "description": "There are several critical problems to watch out for when using social media:",
+        "list": [
+          "<strong>Misinformation:</strong> False information spreads faster than the truth.",
+          "<strong>Privacy Risks:</strong> Personal data can be exposed or misused.",
+          "<strong>Cyberbullying:</strong> Online harassment can deeply affect mental health.",
+          "<strong>Digital Divide:</strong> Not everyone has equal access to technology or the skills to use it."
+        ]
+      }
+    ]
+},
   "finance_intro": {
     "title": "Intro - What is Financial Literacy?",
     "lecture": "Financial literacy is the ability to understand how money works in the world. It involves three core concepts: Inflation (rising prices), Interest (the cost of borrowing or reward for saving), and Risk (the chance of loss). Mastering these helps you avoid debt and build wealth.",
