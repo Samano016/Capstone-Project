@@ -235,7 +235,57 @@
                     <button class="lesson-btn">Start Lesson</button>
                 </div>
             </div>
-        </section>
+
+            <div class="tools-section">
+        <h3 class="digital-text">Interactive Digital Tools</h3>
+        <div class="tool-container">
+
+            <div class="tool-card">
+                <h4>Password Strength Tester</h4>
+                <p class="tool-desc">Test your password habits. (Note: Never use your real school password for testing!)</p>
+                <input type="password" id="password-input" placeholder="Type a test password..." oninput="checkPasswordStrength()">
+                <div id="password-result" class="results-display">
+                    Awaiting input...
+                </div>
+            </div>
+
+            <div class="tool-card">
+                <h4>Phishing "Link Inspector"</h4>
+                <p class="tool-desc">Hover over the button to reveal the destination. Can you spot the scam?</p>
+                
+                <div class="resume-box" style="text-align: left; background: #fff; margin-bottom: 10px; border: 1px solid #ddd;">
+                    <p style="font-size: 0.8rem; margin: 0;"><strong>From:</strong> support@netfIix-billing.com</p>
+                    <p style="font-size: 0.8rem; margin-bottom: 10px;"><strong>Subject:</strong> Account Suspended!</p>
+                    <button class="scenario-btn" style="background: #e74c3c; color: white;" onmouseover="showLink()" onmouseout="hideLink()">
+                        Update Payment Now
+                    </button>
+                </div>
+
+                <div id="link-reveal" class="results-display hidden" style="color: #c0392b; border-color: #f5c6cb; background-color: #f8d7da;">
+                    <strong>Destination:</strong> http://www.netfIix-billing.com/login-scam
+                </div>
+                <p class="tool-desc" style="font-size: 0.75rem; margin-top: 10px;">Tip: Scammers often use a capital "I" instead of a lowercase "l".</p>
+            </div>
+
+            <div class="tool-card" style="max-width: 100%;">
+                <h4>Digital Footprint Scorecard</h4>
+                <p class="tool-desc">How safe are your online habits? Calculate your score out of 100.</p>
+                
+                <div class="resume-box" style="background: #fff; text-align: left; max-height: 200px; overflow-y: auto;">
+                    <ul id="footprint-questions-container" style="list-style: none; padding: 0;">
+                        </ul>
+                </div>
+                
+                <button class="scenario-btn" onclick="calculateFootprint()" style="width: 100%; margin-top: 10px; background-color: #40b4c7; color: white;">
+                    Calculate My Score
+                </button>
+                
+                <div id="footprint-result" class="results-display hidden" style="margin-top: 15px; background: #e1fdfc;"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
         <section id="sources-menu" class="hidden">
     <div class="menu-header">
