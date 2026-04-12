@@ -301,9 +301,92 @@ button:hover {
         text-align: center;
     }
 
-    .fundamentals-list {
-        text-align: left;
-        display: inline-block;
+/* Mini Games */
+.tool-card.finance-theme {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.tool-header h3 {
+    color: #27ae60; /* Finance Green */
+    margin-bottom: 5px;
+}
+
+.roulette-visual-container {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 15px 0;
+    border: 1px dashed #27ae60;
+}
+
+#wheel-animation {
+    font-size: 3rem;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.portfolio-badge #portfolio-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Buttons matching your "Start Lesson" style */
+.investment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.risk-btn {
+    border: none;
+    border-radius: 20px; /* Matching your Start Lesson buttons */
+    padding: 12px 5px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+}
+
+.risk-btn.low { background: #2ecc71; }
+.risk-btn.med { background: #f39c12; }
+.risk-btn.high { background: #e74c3c; }
+
+.risk-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+.feedback-area {
+    margin-top: 15px;
+    min-height: 40px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.reset-link {
+    display: block;
+    margin: 10px auto 0;
+    background: none;
+    border: none;
+    color: #7f8c8d;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.fundamentals-list {
+    text-align: left;
+    display: inline-block;
     }
 }
 .tools-section {
@@ -360,7 +443,6 @@ button:hover {
     line-height: 1.4;
 }
 
-/* Career Exploration Menu */
 /* Resume Interactive Styles */
 .resume-box {
     background: #f9f9f9;
