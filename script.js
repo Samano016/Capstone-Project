@@ -475,7 +475,7 @@ function calculateFootprint() {
     const resultDiv = document.getElementById('footprint-result');
     resultDiv.classList.remove('hidden');
     
-    let message = totalScore >= 80 ? "🏆 Digital Guard!" : totalScore >= 50 ? "⚠️ Average User" : "🛑 High Risk";
+    let message = totalScore >= 80 ? "🏆 Digital Safety, be proud of yourself!" : totalScore >= 50 ? "⚠️ Average User, you are in a good position, but be careful!" : "🛑 High Risk, consider impproving your habits!";
     resultDiv.innerHTML = `<strong>Score: ${totalScore}/100</strong><br>${message}`;
 }
 
