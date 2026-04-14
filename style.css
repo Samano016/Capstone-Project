@@ -301,44 +301,111 @@ button:hover {
         text-align: center;
     }
 
-/* Mini Games */
+/* Mini Game */
+/* Market Roulette */
 .tool-card.finance-theme {
     background: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    max-width: 500px;
-    margin: 20px auto;
+    max-width: 400px;
+    margin: auto;
+    font-family: sans-serif;
 }
 
-.tool-header h3 {
-    color: #27ae60; /* Finance Green */
-    margin-bottom: 5px;
+.age-control {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.age-control input {
+    width: 60px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+#current-age-display {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #2c3e50;
 }
 
 .roulette-visual-container {
-    background: #f8f9fa;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    margin: 15px 0;
-    border: 1px dashed #27ae60;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
 }
 
 #wheel-animation {
     font-size: 3rem;
-    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: inline-block;
-    margin-bottom: 10px;
+    transition: transform 0.5s ease-out;
 }
 
-.portfolio-badge #portfolio-value {
-    font-size: 1.8rem;
+.portfolio-badge {
+    text-align: right;
+}
+
+#portfolio-value {
+    font-size: 1.5rem;
     font-weight: bold;
     color: #2c3e50;
 }
 
+.investment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.risk-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.1s;
+}
+
+.risk-btn:active { transform: scale(0.95); }
+
+.risk-btn.low { background: #e8f5e9; color: #2e7d32; }
+.risk-btn.med { background: #fff3e0; color: #ef6c00; }
+.risk-btn.high { background: #ffebee; color: #c62828; }
+
+.risk-btn:disabled {
+    background: #f5f5f5 !important;
+    color: #bdbdbd !important;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.feedback-area {
+    min-height: 50px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.hidden { display: none; }
+
+.reset-link {
+    display: block;
+    width: 100%;
+    background: #34495e;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
 /* Buttons matching your "Start Lesson" style */
 .investment-grid {
     display: grid;
@@ -494,53 +561,4 @@ button:hover {
 /* Helper Class */
 .hidden {
     display: none !important;
-}
-
-/* Dark Mode */
-body.dark-theme {
-    background-color: #121212 !important;
-    color: #ffffff !important;
-}
-
-/* Main box turns into dark mode */
-body.dark-theme main {
-    background-color: #1e1e1e !important;
-    color: #f4f4f4 !important;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-}
-    
-/* Dark mode for cards and tools */
-body.dark-theme .card, 
-body.dark-theme .topic-card, 
-body.dark-theme .tool-card,
-body.dark-theme .resume-box,
-body.dark-theme .lpc-stage {
-    background-color: #2d2d2d !important;
-    color: #ffffff !important;
-    border: 1px solid #444 !important;
-}
-
-/* Input fields */
-body.dark-theme input {
-    background-color: #333 !important;
-    color: #ffffff !important;
-    border: 1px solid #555 !important;
-}
-
-/* Results display boxes */
-body.dark-theme .results-display {
-    background-color: #254a27 !important; /* Darker green */
-    color: #a5d6a7 !important;
-}
-
-/* Scenarios */
-body.dark-theme .scenario-btn {
-    background-color: #333;
-    color: white;
-    border: 1px solid #444;
-}
-
-body.dark-theme .scenario-btn:hover {
-    background-color: #444;
-    border-color: #2980b9;
 }
