@@ -360,60 +360,90 @@ function calculateLoan() {
 
 //Finance Mini Game
 let portfolio = 1000;
+let currentAge = 18;
+const retirementAge = 65;
+
+// Updates the current age based on the starting input
+function updateStartAge() {
+    const startAgeInput = document.getElementById('start-age');
+    currentAge = parseInt(startAgeInput.value);
+    document.getElementById('current-age-display').innerHTML = `Current Age: <strong>${currentAge}</strong>`;
+}
 
 function playRoulette(riskLevel) {
+    // Stop the game when retirement age is reached
+    if (currentAge >= retirementAge) return;
+
     const feedback = document.getElementById('roulette-feedback');
     const display = document.getElementById('portfolio-value');
     const wheel = document.getElementById('wheel-animation');
     const resetBtn = document.getElementById('reset-roulette');
-    
-    // Spinning effect
+    const ageDisplay = document.getElementById('current-age-display');
+
+    // Visual spin
     wheel.style.transform = "rotate(360deg)";
     setTimeout(() => { wheel.style.transform = "rotate(0deg)"; }, 500);
 
+    // Risk Logic
     let change = 0;
     let outcome = Math.random();
 
     if (riskLevel === 'low') {
-        // Low Risk: 2-5% gain, 1% loss
+        // 90% chance of small gain, 10% chance of small loss
         change = (outcome > 0.1) ? (0.02 + Math.random() * 0.03) : -0.01;
-    } 
-    else if (riskLevel === 'med') {
-        // Med Risk: 7-12% gain, 5-10% loss
+    } else if (riskLevel === 'med') {
+        // 70% chance of gain, 30% chance of loss
         change = (outcome > 0.3) ? (0.07 + Math.random() * 0.05) : -(0.05 + Math.random() * 0.05);
-    } 
-    else if (riskLevel === 'high') {
-        // High Risk: 50-100% gain, 40-80% loss
+    } else if (riskLevel === 'high') {
+        // 40% chance of big gain, 60% chance of big loss
         change = (outcome > 0.6) ? (0.50 + Math.random() * 0.50) : -(0.40 + Math.random() * 0.40);
     }
 
-    // Calculate new total
     let result = portfolio * change;
     portfolio += result;
+    currentAge++; // Age increases by 1 year per spin
 
-    // User Interface
+    // Age and portfolio value
+    ageDisplay.innerHTML = `Current Age: <strong>${currentAge}</strong>`;
+    display.innerText = `$${portfolio.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
+    
     if (result > 0) {
-        feedback.innerHTML = `📈 Market Up! You gained <strong>$${Math.abs(result).toFixed(2)}</strong>.`;
+        feedback.innerHTML = `📈 Age ${currentAge}: Market gain of <strong>$${Math.abs(result).toFixed(2)}</strong>.`;
         feedback.style.color = "#27ae60";
     } else {
-        feedback.innerHTML = `📉 Market Down! You lost <strong>$${Math.abs(result).toFixed(2)}</strong>.`;
+        feedback.innerHTML = `📉 Age ${currentAge}: Market loss of <strong>$${Math.abs(result).toFixed(2)}</strong>.`;
         feedback.style.color = "#c0392b";
     }
 
-    display.innerText = `Portfolio: $${portfolio.toLocaleString(undefined, {minimumFractionDigits: 2})}`;
-    
-    if (portfolio <= 0) {
-        feedback.innerHTML = "💀 Bankruptcy! Your portfolio hit $0.";
+    // Retirement and bankrupcy
+    if (currentAge >= retirementAge) {
+        feedback.innerHTML = `🎉 <strong>Retirement Reached!</strong><br>Your retirement account has <strong>$${portfolio.toLocaleString(undefined, {minimumFractionDigits: 2})}</strong>.`;
+        feedback.style.color = "#2c3e50";
+        endGame();
+    } else if (portfolio <= 0) {
+        feedback.innerHTML = "💀 <strong>Bankruptcy!</strong> Your portfolio hit $0.";
         portfolio = 0;
-        resetBtn.classList.remove('hidden');
+        display.innerText = "$0.00";
+        endGame();
     }
+}
+
+function endGame() {
+    document.querySelectorAll('.risk-btn').forEach(btn => btn.disabled = true);
+    document.getElementById('start-age').disabled = true;
+    document.getElementById('reset-roulette').classList.remove('hidden');
 }
 
 function resetRoulette() {
     portfolio = 1000;
-    document.getElementById('portfolio-value').innerText = "Portfolio: $1,000.00";
+    // Age from input
+    updateStartAge();
+    
+    document.getElementById('portfolio-value').innerText = "$1,000.00";
     document.getElementById('roulette-feedback').innerText = "";
     document.getElementById('reset-roulette').classList.add('hidden');
+    document.querySelectorAll('.risk-btn').forEach(btn => btn.disabled = false);
+    document.getElementById('start-age').disabled = false;
 }
 
 // Career Exploration Tools
