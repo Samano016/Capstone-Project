@@ -302,6 +302,54 @@
       { "text": "Borrowing money to invest in the stock market.", "isCorrect": false, "feedback": "Incorrect. You should save your own money first." }
     ]
   },
+  "bonds_basics": {
+    "title": "Understanding Bonds",
+    "lecture": "A bond is essentially a loan you give to a government or a company. In exchange, they promise to pay you back the full amount on a specific 'maturity date' and give you regular interest payments along the way. It is generally seen as a way to raise funds for big projects.",
+    "practice": "Scenario: A city wants to build a new high school and 'sells bonds' to the public. You buy a $1,000 bond that pays 5% interest yearly for 10 years. What happens after 10 years?",
+    "choices": [
+      { "text": "The city keeps your $1,000 but keeps paying you interest forever.", "isCorrect": false, "feedback": "Incorrect. Bonds have a 'maturity date' where the original loan is repaid and interest stops." },
+      { "text": "The city pays you back your $1,000 principal in full.", "isCorrect": true, "feedback": "Correct! At the end of the term, you get your initial investment back plus all the interest you earned over the years." },
+      { "text": "You now own a small piece of the high school building.", "isCorrect": false, "feedback": "Incorrect. That sounds like a stock. Bonds are loans, not ownership." }
+    ],
+    "quiz": "Question: What is the 'principal' of a bond?",
+    "quizChoices": [
+      { "text": "The person in charge of the company or government.", "isCorrect": false, "feedback": "Incorrect. In finance, principal refers to the money amount." },
+      { "text": "The original loan amount that is repaid at the end of the term.", "isCorrect": true, "feedback": "Correct! The principal is the base amount you lent them." },
+      { "text": "The interest rate the bond pays every year.", "isCorrect": false, "feedback": "Incorrect. That is the 'coupon rate' or interest rate." }
+    ]
+  },
+  "diversification_index": {
+    "title": "Diversification & Index Funds",
+    "lecture": "Diversification is the strategy of spreading your money across many different investments to reduce risk—don't put all your eggs in one basket! An Index Fund makes this easy by automatically buying a tiny piece of every company in a market index (like the S&P 500) for a very low fee.",
+    "practice": "Scenario: You have $1,000. You put it all into one brand-new tech company. Two weeks later, that company goes bankrupt. What is the better way to have invested that money?",
+    "choices": [
+      { "text": "Buy an Index Fund that spreads the $1,000 across 500 different companies.", "isCorrect": true, "feedback": "Correct! If one company in an index fund fails, the other 499 still protect your investment. That is diversification." },
+      { "text": "Keep the money in cash under your bed to avoid all risk.", "isCorrect": false, "feedback": "Incorrect. While safe from bankruptcy, you lose value to inflation and miss out on growth." },
+      { "text": "Wait for a different tech company to look 'lucky' and try again.", "isCorrect": false, "feedback": "Incorrect. Relying on luck in a single stock is high-risk gambling, not diversifying." }
+    ],
+    "quiz": "Question: Why do Index Funds typically have lower fees than 'Hedge Funds'?",
+    "quizChoices": [
+      { "text": "Because they are managed by the government.", "isCorrect": false, "feedback": "Incorrect. They are private investments." },
+      { "text": "Because they aren't 'actively managed'; they just track a specific list of companies.", "isCorrect": true, "feedback": "Exactly! Since there isn't a team picking individual stocks all day, the costs stay low." },
+      { "text": "Because they only invest in small, cheap companies.", "isCorrect": false, "feedback": "Incorrect. Index funds can track the biggest companies in the world." }
+    ]
+  },
+  "stocks_portfolios": {
+    "title": "Stocks & Investment Portfolios",
+    "lecture": "A stock represents partial ownership in a corporation. If the company profits, you own a slice of that success. An 'Investment Portfolio' is simply the total collection of all your assets—stocks, bonds, cash, and even things like real estate or artwork.",
+    "practice": "Scenario: You own 10 shares of a shoe company. The company releases a huge hit sneaker and their profits double. How does this affect your 'portfolio'?",
+    "choices": [
+      { "text": "It doesn't affect you because you only own a small part.", "isCorrect": false, "feedback": "Incorrect. As a partial owner (shareholder), you benefit when the company's value rises." },
+      { "text": "The value of your stocks in that company will likely increase, raising your portfolio's total value.", "isCorrect": true, "feedback": "Correct! Your portfolio grows because your ownership in that profitable company is now worth more." },
+      { "text": "The company will send you free shoes.", "isCorrect": false, "feedback": "Incorrect. While nice, stocks grant you a portion of assets and profits, not necessarily free products!" }
+    ],
+    "quiz": "Question: What is the difference between a 'Stock' and a 'Portfolio'?",
+    "quizChoices": [
+      { "text": "A stock is an ownership slice; a portfolio is your entire collection of investments.", "isCorrect": true, "feedback": "Perfect! Think of a stock as an ingredient and the portfolio as the whole meal." },
+      { "text": "A stock is for rich people; a portfolio is for students.", "isCorrect": false, "feedback": "Incorrect. Anyone can start a portfolio with even one stock." },
+      { "text": "There is no difference; the terms mean the same thing.", "isCorrect": false, "feedback": "Incorrect. One is a single asset; the other is the total collection." }
+    ]
+  },
   "career_soft_skills": {
     "title": "Soft Skills & Professionalism",
     "lecture": "Hard skills are specific technical abilities (like coding or cooking), but 'Soft Skills' are interpersonal attributes (like time management, adaptability, and emotional intelligence). Professionalism combines these skills with reliability.",
