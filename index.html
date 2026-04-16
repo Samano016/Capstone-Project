@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adulting 101</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h1 onclick="showHome()" style="cursor: pointer;">Adulting 101</h1>
         <nav>
-    <button class="nav-btn" onclick="loadModule('finance')">Financial Literacy</button>
-    <button class="nav-btn" onclick="loadModule('career')">Career Exploration</button>
-    <button class="nav-btn" onclick="loadModule('digital')">Digital Citizenship</button>
-    <button class="nav-btn" onclick="loadModule('sources')">Sources</button>
-    <button class="nav-btn" onclick="handleLogout()">Logout</button>
-            
+            <button class="nav-btn" onclick="loadModule('finance')">Financial Literacy</button>
+            <button class="nav-btn" onclick="loadModule('career')">Career Exploration</button>
+            <button class="nav-btn" onclick="loadModule('digital')">Digital Citizenship</button>
+            <button class="nav-btn" onclick="loadModule('sources')">Sources</button>
+            <button class="nav-btn" onclick="handleLogout()">Logout</button>
 
-    <div id="google_translate_element" style="display: inline-block; vertical-align: middle; margin-left: 10px;"></div>
-</nav>
+
+            <div id="google_translate_element" style="display: inline-block; vertical-align: middle; margin-left: 10px;"></div>
+        </nav>
     </header>
 
     <main id="app-container">
         <section id="login-screen" class="welcome-container">
-        <h2 class="welcome-title">Student Login</h2>
-        <p class="welcome-subtitle">Welcome back! Please sign in to continue your journey.</p>
-        
-        <div style="max-width: 320px; margin: 20px auto; display: flex; flex-direction: column; gap: 15px;">
-            <input type="email" id="student-email" placeholder="School Email" style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
-            <input type="password" id="student-pass" placeholder="Password" style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
-            
-            <button class="start-btn" onclick="handleLogin()" style="width: 100%;">Login</button>
-            <button class="lesson-btn" onclick="handleSignUp()" style="width: 100%; background-color: #7f8c8d;">Create Account</button>
-        </div>
-    </section>
-        
+            <h2 class="welcome-title">Student Login</h2>
+            <p class="welcome-subtitle">Welcome back! Please sign in to continue your journey.</p>
+
+            <div style="max-width: 320px; margin: 20px auto; display: flex; flex-direction: column; gap: 15px;">
+                <input type="email" id="student-email" placeholder="School Email" style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
+                <input type="password" id="student-pass" placeholder="Password" style="padding: 12px; border-radius: 8px; border: 1px solid #ddd;">
+
+                <button class="start-btn" onclick="handleLogin()" style="width: 100%;">Login</button>
+                <button class="lesson-btn" onclick="handleSignUp()" style="width: 100%; background-color: #7f8c8d;">Create Account</button>
+            </div>
+        </section>
+
         <section id="welcome-screen" class="welcome-container hidden">
             <h2 class="welcome-title">Welcome to Adulting 101</h2>
             <p class="welcome-subtitle">Select a topic to begin learning</p>
-            
+
             <div class="module-cards">
                 <div class="card card-finance" onclick="loadModule('finance')">
                     <h3>Finance</h3>
@@ -61,176 +63,176 @@
         </section>
 
         <section id="finance-menu" class="hidden">
-    <div class="menu-header">
-        <h2 class="finance-text">Finance Topics</h2>
-        <p>Select a lesson to begin mastering your money.</p>
-    </div>
+            <div class="menu-header">
+                <h2 class="finance-text">Finance Topics</h2>
+                <p>Select a lesson to begin mastering your money.</p>
+            </div>
 
-    <div id="finance-fundamentals-target"></div>
+            <div id="finance-fundamentals-target"></div>
 
-    <div class="topic-grid">
-        <div class="topic-card" onclick="startLesson('finance_intro')">
-            <div class="icon"></div>
-            <h3>Intro - What is Financial Literacy?</h3>
-            <p>Where do I start?</p>
-            <button class="lesson-btn">Start Lesson</button>
-        </div>
-        <div class="topic-card" onclick="startLesson('finance_using')">
-            <div class="icon"></div>
-            <h3>Using Money</h3>
-            <p>"What should I buy today?"</p>
-            <button class="lesson-btn">Start Lesson</button>
-        </div>
-        <div class="topic-card" onclick="startLesson('finance_decisions')">
-            <div class="icon"></div>
-            <h3>Smart Decisions</h3>
-            <p>Think first, buy later.</p>
-            <button class="lesson-btn">Start Lesson</button>
-        </div>
-        <div class="topic-card" onclick="startLesson('finance_earning')">
-            <div class="icon"></div>
-            <h3>How to Make Money</h3>
-            <p>Where does money come from?</p>
-            <button class="lesson-btn">Start Lesson</button>
-        </div>
-        <div class="topic-card" onclick="startLesson('budgeting_basics')">
-        <div class="icon icon-budget"></div>
-        <h3>The Art of Budgeting</h3>
-        <p>Create a SMART plan to tell your money where to go.</p>
-        <button class="lesson-btn">Start Lesson</button>
-    </div>
-    <div class="topic-card" onclick="startLesson('banking_services')">
-        <div class="icon icon-banking"></div>
-        <h3>Banking & Hidden Fees</h3>
-        <p>Avoid small fees that drain your savings over time.</p>
-        <button class="lesson-btn">Start Lesson</button>
-    </div>
-    <div class="topic-card" onclick="startLesson('credit_reputation')">
-        <div class="icon icon-credit"></div>
-        <h3>Your Financial Reputation</h3>
-        <p>Understand how your credit history affects your future loans.</p>
-        <button class="lesson-btn">Start Lesson</button>
-    </div>
-    <div class="topic-card" onclick="startLesson('car_ownership')">
-        <div class="icon icon-car"></div>
-        <h3>Cars and Loans</h3>
-        <p>Budget for the "real" cost of ownership beyond the monthly payment.</p>
-        <button class="lesson-btn">Start Lesson</button>
-    </div>
+            <div class="topic-grid">
+                <div class="topic-card" onclick="startLesson('finance_intro')">
+                    <div class="icon"></div>
+                    <h3>Intro - What is Financial Literacy?</h3>
+                    <p>Where do I start?</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+                <div class="topic-card" onclick="startLesson('finance_using')">
+                    <div class="icon"></div>
+                    <h3>Using Money</h3>
+                    <p>"What should I buy today?"</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+                <div class="topic-card" onclick="startLesson('finance_decisions')">
+                    <div class="icon"></div>
+                    <h3>Smart Decisions</h3>
+                    <p>Think first, buy later.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+                <div class="topic-card" onclick="startLesson('finance_earning')">
+                    <div class="icon"></div>
+                    <h3>How to Make Money</h3>
+                    <p>Where does money come from?</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+                <div class="topic-card" onclick="startLesson('budgeting_basics')">
+                    <div class="icon icon-budget"></div>
+                    <h3>The Art of Budgeting</h3>
+                    <p>Create a SMART plan to tell your money where to go.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+                <div class="topic-card" onclick="startLesson('banking_services')">
+                    <div class="icon icon-banking"></div>
+                    <h3>Banking & Hidden Fees</h3>
+                    <p>Avoid small fees that drain your savings over time.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+                <div class="topic-card" onclick="startLesson('credit_reputation')">
+                    <div class="icon icon-credit"></div>
+                    <h3>Your Financial Reputation</h3>
+                    <p>Understand how your credit history affects your future loans.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+                <div class="topic-card" onclick="startLesson('car_ownership')">
+                    <div class="icon icon-car"></div>
+                    <h3>Cars and Loans</h3>
+                    <p>Budget for the "real" cost of ownership beyond the monthly payment.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
 
-    <div class="topic-card" onclick="startLesson('saving_investing')">
-        <div class="icon icon-savings"></div>
-        <h3>Saving and Investing</h3>
-        <p>See how small amounts grow into large sums with interest.</p>
-        <button class="lesson-btn">Start Lesson</button>
-    </div>
-    <div class="topic-card" onclick="startLesson('bonds_basics')">
-        <div class="icon icon-bonds"></div>
-        <h3>Understanding Bonds</h3>
-        <p>How lending to the governments can earn you interest.</p>
-        <button class="lesson-btn">Start Lesson</button>
-    </div>
-    <div class="topic-card" onclick="startLesson('diversification_index')">
-        <div class="icon icon-diversification"></div>
-        <h3>Diversification & Index Funds</h3>
-        <p>Spread your risk.</p>
-        <button class="lesson-btn">Start Lesson</button>
-    </div>
-    <div class="topic-card" onclick="startLesson('stocks_portfolios')">
-        <div class="icon icon-portfolio"></div>
-        <h3>Stocks & Portfolios</h3>
-        <p>Ownership in companies and how to manage your assets.</p>
-        <button class="lesson-btn">Start Lesson</button>
-    </div>
-</div>
-    </div>
+                <div class="topic-card" onclick="startLesson('saving_investing')">
+                    <div class="icon icon-savings"></div>
+                    <h3>Saving and Investing</h3>
+                    <p>See how small amounts grow into large sums with interest.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+                <div class="topic-card" onclick="startLesson('bonds_basics')">
+                    <div class="icon icon-bonds"></div>
+                    <h3>Understanding Bonds</h3>
+                    <p>How lending to the governments can earn you interest.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+                <div class="topic-card" onclick="startLesson('diversification_index')">
+                    <div class="icon icon-diversification"></div>
+                    <h3>Diversification & Index Funds</h3>
+                    <p>Spread your risk.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+                <div class="topic-card" onclick="startLesson('stocks_portfolios')">
+                    <div class="icon icon-portfolio"></div>
+                    <h3>Stocks & Portfolios</h3>
+                    <p>Ownership in companies and how to manage your assets.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+            </div>
+            </div>
 
-    <div class="tools-section">
-        <h3 class="finance-text">Interactive Finance Tools</h3>
-        <div class="tool-container">
-            <div class="tool-card">
-                <h4>50/30/20 Budget Calculator</h4>
-                <p class="tool-desc">Divide your income: 50% for needs, 30% for wants, and 20% for savings.</p>
-                <input type="number" id="budget-input" placeholder="Monthly Income ($)" oninput="calculateBudget()">
-                <div class="results-display">
-                    <p>Needs: $<span id="needs-val">0</span> | Wants: $<span id="wants-val">0</span> | Savings: $<span id="savings-val">0</span></p>
+            <div class="tools-section">
+                <h3 class="finance-text">Interactive Finance Tools</h3>
+                <div class="tool-container">
+                    <div class="tool-card">
+                        <h4>50/30/20 Budget Calculator</h4>
+                        <p class="tool-desc">Divide your income: 50% for needs, 30% for wants, and 20% for savings.</p>
+                        <input type="number" id="budget-input" placeholder="Monthly Income ($)" oninput="calculateBudget()">
+                        <div class="results-display">
+                            <p>Needs: $<span id="needs-val">0</span> | Wants: $<span id="wants-val">0</span> | Savings: $<span id="savings-val">0</span></p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <h4>Cost in Work-Hours</h4>
+                        <p class="tool-desc">See how many hours you actually have to work to pay for a specific item.</p>
+                        <input type="number" id="item-cost" placeholder="Item Price ($)" oninput="calculateHours()">
+                        <input type="number" id="hourly-wage" placeholder="Hourly Wage ($)" oninput="calculateHours()">
+                        <div class="results-display">
+                            <p>Work needed: <strong><span id="hours-needed">0</span> hours</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <h4>Savings Simulator</h4>
+                        <p class="tool-desc">Watch how your money grows over time when you save a little bit every month.</p>
+                        <input type="number" id="compound-principal" placeholder="Start Balance ($)" oninput="calculateCompound()">
+                        <input type="number" id="compound-monthly" placeholder="Monthly Add ($)" oninput="calculateCompound()">
+                        <input type="number" id="compound-years" placeholder="Years" oninput="calculateCompound()">
+                        <div class="results-display">
+                            <p>Future Total: <strong>$<span id="compound-total">0</span></strong></p>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <h4>Loan Monthly Payment</h4>
+                        <p class="tool-desc">Calculate what your monthly bill would be for a car or personal loan.</p>
+                        <input type="number" id="loan-amount" placeholder="Loan Amount ($)" oninput="calculateLoan()">
+                        <input type="number" id="loan-rate" placeholder="Interest Rate (%)" oninput="calculateLoan()">
+                        <input type="number" id="loan-years" placeholder="Years" oninput="calculateLoan()">
+                        <div class="results-display">
+                            <p>Monthly Payment: <strong>$<span id="monthly-payment">0</span></strong></p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="tool-card">
-                <h4>Cost in Work-Hours</h4>
-                <p class="tool-desc">See how many hours you actually have to work to pay for a specific item.</p>
-                <input type="number" id="item-cost" placeholder="Item Price ($)" oninput="calculateHours()">
-                <input type="number" id="hourly-wage" placeholder="Hourly Wage ($)" oninput="calculateHours()">
-                <div class="results-display">
-                    <p>Work needed: <strong><span id="hours-needed">0</span> hours</strong></p>
+            <div id="roulette-game" class="tool-card finance-theme">
+                <div class="tool-header">
+                    <h3>Market Risk Roulette: Retirement Edition</h3>
+                    <p>Invest your <strong>$1,000</strong>. Each spin represents 1 year of market activity.</p>
                 </div>
+
+                <div class="age-control">
+                    <label for="start-age">Starting Age:</label>
+                    <input type="number" id="start-age" value="18" min="1" max="64" onchange="updateStartAge()">
+                    <div id="current-age-display">Current Age: <strong>18</strong></div>
+                </div>
+
+                <div class="roulette-visual-container">
+                    <div id="wheel-animation">💰</div>
+                    <div class="portfolio-badge">
+                        <small>Current Portfolio</small>
+                        <div id="portfolio-value">$1,000.00</div>
+                    </div>
+                </div>
+
+                <div class="investment-grid">
+                    <button id="low-btn" class="risk-btn low" onclick="playRoulette('low')">
+                        <strong>Low Risk</strong>
+                        <span>Bonds / Savings</span>
+                    </button>
+                    <button id="med-btn" class="risk-btn med" onclick="playRoulette('med')">
+                        <strong>Med Risk</strong>
+                        <span>Index Funds</span>
+                    </button>
+                    <button id="high-btn" class="risk-btn high" onclick="playRoulette('high')">
+                        <strong>High Risk</strong>
+                        <span>Crypto / Stocks</span>
+                    </button>
+                </div>
+
+                <div id="roulette-feedback" class="feedback-area"></div>
+                <button id="reset-roulette" class="reset-link hidden" onclick="resetRoulette()">Reset Portfolio</button>
             </div>
 
-            <div class="tool-card">
-                <h4>Savings Simulator</h4>
-                <p class="tool-desc">Watch how your money grows over time when you save a little bit every month.</p>
-                <input type="number" id="compound-principal" placeholder="Start Balance ($)" oninput="calculateCompound()">
-                <input type="number" id="compound-monthly" placeholder="Monthly Add ($)" oninput="calculateCompound()">
-                <input type="number" id="compound-years" placeholder="Years" oninput="calculateCompound()">
-                <div class="results-display">
-                    <p>Future Total: <strong>$<span id="compound-total">0</span></strong></p>
-                </div>
-            </div>
-
-            <div class="tool-card">
-                <h4>Loan Monthly Payment</h4>
-                <p class="tool-desc">Calculate what your monthly bill would be for a car or personal loan.</p>
-                <input type="number" id="loan-amount" placeholder="Loan Amount ($)" oninput="calculateLoan()">
-                <input type="number" id="loan-rate" placeholder="Interest Rate (%)" oninput="calculateLoan()">
-                <input type="number" id="loan-years" placeholder="Years" oninput="calculateLoan()">
-                <div class="results-display">
-                    <p>Monthly Payment: <strong>$<span id="monthly-payment">0</span></strong></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="roulette-game" class="tool-card finance-theme">
-    <div class="tool-header">
-        <h3>Market Risk Roulette: Retirement Edition</h3>
-        <p>Invest your <strong>$1,000</strong>. Each spin represents 1 year of market activity.</p>
-    </div>
-    
-    <div class="age-control">
-        <label for="start-age">Starting Age:</label>
-        <input type="number" id="start-age" value="18" min="1" max="64" onchange="updateStartAge()">
-        <div id="current-age-display">Current Age: <strong>18</strong></div>
-    </div>
-
-    <div class="roulette-visual-container">
-        <div id="wheel-animation">💰</div>
-        <div class="portfolio-badge">
-            <small>Current Portfolio</small>
-            <div id="portfolio-value">$1,000.00</div>
-        </div>
-    </div>
-
-    <div class="investment-grid">
-        <button id="low-btn" class="risk-btn low" onclick="playRoulette('low')">
-            <strong>Low Risk</strong>
-            <span>Bonds / Savings</span>
-        </button>
-        <button id="med-btn" class="risk-btn med" onclick="playRoulette('med')">
-            <strong>Med Risk</strong>
-            <span>Index Funds</span>
-        </button>
-        <button id="high-btn" class="risk-btn high" onclick="playRoulette('high')">
-            <strong>High Risk</strong>
-            <span>Crypto / Stocks</span>
-        </button>
-    </div>
-
-    <div id="roulette-feedback" class="feedback-area"></div>
-    <button id="reset-roulette" class="reset-link hidden" onclick="resetRoulette()">Reset Portfolio</button>
-</div>
-            
-</section>
+        </section>
 
         <section id="career-menu" class="hidden">
             <div class="menu-header">
@@ -239,7 +241,7 @@
             </div>
 
             <div id="career-exploration-fundamentals"></div>
-            
+
             <div class="topic-grid">
                 <div class="topic-card card-career" onclick="startLesson('career_readiness')">
                     <div class="icon"></div>
@@ -256,52 +258,87 @@
                     <h3>Discovering Your Career Path</h3>
                     <button class="lesson-btn">Start Lesson</button>
                 </div>
+                <div class="topic-card" onclick="startLesson('apprenticeships')">
+                    <div class="icon icon-trade"></div>
+                    <h3>12. Learning a Trade</h3>
+                    <p>Get paid to learn a skill like plumbing or car repair.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+
+                <div class="topic-card" onclick="startLesson('career_assessments')">
+                    <div class="icon icon-test"></div>
+                    <h3>13. Finding Your 'Vibe'</h3>
+                    <p>Take a test to see which jobs match your personality.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+
+                <div class="topic-card" onclick="startLesson('learning_plans')">
+                    <div class="icon icon-plan"></div>
+                    <h3>14. Picking Your Own Classes</h3>
+                    <p>How to make high school work for your future goals.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+
+                <div class="topic-card" onclick="startLesson('internships')">
+                    <div class="icon icon-intern"></div>
+                    <h3>15. Testing a Career</h3>
+                    <p>Do a 'trial run' of a job to see if you actually like it.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+
+                <div class="topic-card" onclick="startLesson('soft_skills')">
+                    <div class="icon icon-soft"></div>
+                    <h3>18. Being a Good Teammate</h3>
+                    <p>Master the 'people skills' needed for every job.</p>
+                    <button class="lesson-btn">Start Lesson</button>
+                </div>
+
             </div>
             <div class="tool-container">
 
-    <div class="tool-card" style="max-width: 100%;"> 
-        <h4 style="color: #2980b9;">Resume "Before & After"</h4>
-        <p class="tool-desc">Click the 3 "Red Flags" in this messy resume to unlock the professional Level 100 version!</p>
-        
-        <div id="bad-resume" class="resume-box">
-            <p><strong>Email:</strong> <span class="red-flag" onclick="flagFound(this)">skaterboi99@yahoo.com</span></p>
-            <p><strong>Objective:</strong> To get a job so I can make money.</p>
-            <p><strong>Experience:</strong> I <span class="red-flag" onclick="flagFound(this)">helped out</span> at a snack bar and <span class="red-flag" onclick="flagFound(this)">did some stuff</span> for a school event.</p>
-        </div>
+                <div class="tool-card" style="max-width: 100%;">
+                    <h4 style="color: #2980b9;">Resume "Before & After"</h4>
+                    <p class="tool-desc">Click the 3 "Red Flags" in this messy resume to unlock the professional Level 100 version!</p>
 
-        <div id="good-resume" class="resume-box hidden" style="border-left: 4px solid #2980b9; background: #ebf5fb;">
-            <h4 style="color: #2980b9;"> Level 100 Resume Unlocked!</h4>
-            <p><strong>Email:</strong> first.last@professional.com</p>
-            <p><strong>Objective:</strong> Dedicated student seeking to apply leadership and organizational skills in a professional setting.</p>
-            <p><strong>Experience:</strong> <strong>Managed</strong> daily operations and inventory for a school snack bar. <strong>Organized and promoted</strong> a 100th-day campus event for PPEP Tec CCLC students.</p>
-        </div>
-    </div>
+                    <div id="bad-resume" class="resume-box">
+                        <p><strong>Email:</strong> <span class="red-flag" onclick="flagFound(this)">skaterboi99@yahoo.com</span></p>
+                        <p><strong>Objective:</strong> To get a job so I can make money.</p>
+                        <p><strong>Experience:</strong> I <span class="red-flag" onclick="flagFound(this)">helped out</span> at a snack bar and <span class="red-flag" onclick="flagFound(this)">did some stuff</span> for a school event.</p>
+                    </div>
 
-    <div class="tool-card">
-        <h4 style="color: #2980b9;">Workplace Scenarios</h4>
-        <p class="tool-desc">Your boss gives you feedback you disagree with. What do you do?</p>
-        
-        <button class="scenario-btn" onclick="checkScenario('A')">A) Argue your point immediately</button>
-        <button class="scenario-btn" onclick="checkScenario('B')">B) Listen and ask for clarification</button>
-        <button class="scenario-btn" onclick="checkScenario('C')">C) Ignore it and keep working</button>
-        
-        <div class="results-display hidden" id="scenario-feedback" style="background: #ebf5fb; color: #154360;"></div>
-    </div>
+                    <div id="good-resume" class="resume-box hidden" style="border-left: 4px solid #2980b9; background: #ebf5fb;">
+                        <h4 style="color: #2980b9;"> Level 100 Resume Unlocked!</h4>
+                        <p><strong>Email:</strong> first.last@professional.com</p>
+                        <p><strong>Objective:</strong> Dedicated student seeking to apply leadership and organizational skills in a professional setting.</p>
+                        <p><strong>Experience:</strong> <strong>Managed</strong> daily operations and inventory for a school snack bar. <strong>Organized and promoted</strong> a 100th-day campus event for PPEP Tec CCLC students.</p>
+                    </div>
+                </div>
 
-    <div class="tool-card">
-        <h4 style="color: #2980b9;">100 Days Post-Graduation</h4>
-        <p class="tool-desc">List 3 actionable things you will do in your first 100 days as a grad.</p>
-        
-        <input type="text" id="goal1" placeholder="1. e.g., Update my resume">
-        <input type="text" id="goal2" placeholder="2. e.g., Apply for 3 jobs">
-        <input type="text" id="goal3" placeholder="3. e.g., Set up a LinkedIn profile">
-        
-        <button class="scenario-btn" onclick="saveGoals()" style="width: 100%; margin-top: 10px; background-color: #2980b9; color: white;">Commit to Goals</button>
-        
-        <div class="results-display hidden" id="goals-display" style="background: #ebf5fb; color: #154360;"></div>
-    </div>
+                <div class="tool-card">
+                    <h4 style="color: #2980b9;">Workplace Scenarios</h4>
+                    <p class="tool-desc">Your boss gives you feedback you disagree with. What do you do?</p>
 
-</div>
+                    <button class="scenario-btn" onclick="checkScenario('A')">A) Argue your point immediately</button>
+                    <button class="scenario-btn" onclick="checkScenario('B')">B) Listen and ask for clarification</button>
+                    <button class="scenario-btn" onclick="checkScenario('C')">C) Ignore it and keep working</button>
+
+                    <div class="results-display hidden" id="scenario-feedback" style="background: #ebf5fb; color: #154360;"></div>
+                </div>
+
+                <div class="tool-card">
+                    <h4 style="color: #2980b9;">100 Days Post-Graduation</h4>
+                    <p class="tool-desc">List 3 actionable things you will do in your first 100 days as a grad.</p>
+
+                    <input type="text" id="goal1" placeholder="1. e.g., Update my resume">
+                    <input type="text" id="goal2" placeholder="2. e.g., Apply for 3 jobs">
+                    <input type="text" id="goal3" placeholder="3. e.g., Set up a LinkedIn profile">
+
+                    <button class="scenario-btn" onclick="saveGoals()" style="width: 100%; margin-top: 10px; background-color: #2980b9; color: white;">Commit to Goals</button>
+
+                    <div class="results-display hidden" id="goals-display" style="background: #ebf5fb; color: #154360;"></div>
+                </div>
+
+            </div>
         </section>
         <section id="digital-menu" class="hidden">
             <div class="menu-header">
@@ -310,7 +347,7 @@
             </div>
 
             <div id="digital-fundamentals-target"></div>
-            
+
             <div class="topic-grid">
                 <div class="topic-card card-digital" onclick="startLesson('digital_media_literacy')">
                     <div class="icon"></div>
@@ -330,88 +367,88 @@
             </div>
 
             <div class="tools-section">
-        <h3 class="digital-text">Interactive Digital Tools</h3>
-        <div class="tool-container">
+                <h3 class="digital-text">Interactive Digital Tools</h3>
+                <div class="tool-container">
 
-            <div class="tool-card">
-                <h4>Password Strength Tester</h4>
-                <p class="tool-desc">Test your password habits. (Note: Never use your real school password for testing!)</p>
-                <input type="password" id="password-input" placeholder="Type a test password..." oninput="checkPasswordStrength()">
-                <div id="password-result" class="results-display">
-                    Awaiting input...
+                    <div class="tool-card">
+                        <h4>Password Strength Tester</h4>
+                        <p class="tool-desc">Test your password habits. (Note: Never use your real school password for testing!)</p>
+                        <input type="password" id="password-input" placeholder="Type a test password..." oninput="checkPasswordStrength()">
+                        <div id="password-result" class="results-display">
+                            Awaiting input...
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <h4>Phishing "Link Inspector"</h4>
+                        <p class="tool-desc">Hover over the button to reveal the destination. Can you spot the scam?</p>
+
+                        <div class="resume-box" style="text-align: left; background: #fff; margin-bottom: 10px; border: 1px solid #ddd;">
+                            <p style="font-size: 0.8rem; margin: 0;"><strong>From:</strong> support@netfIix-billing.com</p>
+                            <p style="font-size: 0.8rem; margin-bottom: 10px;"><strong>Subject:</strong> Account Suspended!</p>
+                            <button class="scenario-btn" style="background: #e74c3c; color: white;" onmouseover="showLink()" onmouseout="hideLink()">
+                                Update Payment Now
+                            </button>
+                        </div>
+
+                        <div id="link-reveal" class="results-display hidden" style="color: #c0392b; border-color: #f5c6cb; background-color: #f8d7da;">
+                            <strong>Destination:</strong> http://www.netfIix-billing.com/login-scam
+                        </div>
+                        <p class="tool-desc" style="font-size: 0.75rem; margin-top: 10px;">Tip: Scammers often use a capital "I" instead of a lowercase "l".</p>
+                    </div>
+
+                    <div class="tool-card" style="max-width: 100%;">
+                        <h4>Digital Footprint Scorecard</h4>
+                        <p class="tool-desc">How safe are your online habits? Calculate your score out of 100.</p>
+
+                        <div class="resume-box" style="background: #fff; text-align: left; max-height: 200px; overflow-y: auto;">
+                            <ul id="footprint-questions-container" style="list-style: none; padding: 0;">
+                            </ul>
+                        </div>
+
+                        <button class="scenario-btn" onclick="calculateFootprint()" style="width: 100%; margin-top: 10px; background-color: #40b4c7; color: white;">
+                            Calculate My Score
+                        </button>
+
+                        <div id="footprint-result" class="results-display hidden" style="margin-top: 15px; background: #e1fdfc;"></div>
+                    </div>
+
                 </div>
             </div>
-
-            <div class="tool-card">
-                <h4>Phishing "Link Inspector"</h4>
-                <p class="tool-desc">Hover over the button to reveal the destination. Can you spot the scam?</p>
-                
-                <div class="resume-box" style="text-align: left; background: #fff; margin-bottom: 10px; border: 1px solid #ddd;">
-                    <p style="font-size: 0.8rem; margin: 0;"><strong>From:</strong> support@netfIix-billing.com</p>
-                    <p style="font-size: 0.8rem; margin-bottom: 10px;"><strong>Subject:</strong> Account Suspended!</p>
-                    <button class="scenario-btn" style="background: #e74c3c; color: white;" onmouseover="showLink()" onmouseout="hideLink()">
-                        Update Payment Now
-                    </button>
-                </div>
-
-                <div id="link-reveal" class="results-display hidden" style="color: #c0392b; border-color: #f5c6cb; background-color: #f8d7da;">
-                    <strong>Destination:</strong> http://www.netfIix-billing.com/login-scam
-                </div>
-                <p class="tool-desc" style="font-size: 0.75rem; margin-top: 10px;">Tip: Scammers often use a capital "I" instead of a lowercase "l".</p>
-            </div>
-
-            <div class="tool-card" style="max-width: 100%;">
-                <h4>Digital Footprint Scorecard</h4>
-                <p class="tool-desc">How safe are your online habits? Calculate your score out of 100.</p>
-                
-                <div class="resume-box" style="background: #fff; text-align: left; max-height: 200px; overflow-y: auto;">
-                    <ul id="footprint-questions-container" style="list-style: none; padding: 0;">
-                        </ul>
-                </div>
-                
-                <button class="scenario-btn" onclick="calculateFootprint()" style="width: 100%; margin-top: 10px; background-color: #40b4c7; color: white;">
-                    Calculate My Score
-                </button>
-                
-                <div id="footprint-result" class="results-display hidden" style="margin-top: 15px; background: #e1fdfc;"></div>
-            </div>
-
-        </div>
-    </div>
-</section>
+        </section>
 
         <section id="sources-menu" class="hidden">
-    <div class="menu-header">
-        <h2>Sources & Bibliography</h2>
-        <p>The data and logic used in these tools are based on the following professional standards and resources.</p>
-    </div>
+            <div class="menu-header">
+                <h2>Sources & Bibliography</h2>
+                <p>The data and logic used in these tools are based on the following professional standards and resources.</p>
+            </div>
 
-    <div class="tool-card" style="max-width: 800px; margin: 20px auto; text-align: left;">
-        <h3 style="color: #2e7d32;">Finance Data</h3>
-        <ul>
-            <li><strong>50/30/20 Rule:</strong> Popularized by Senator Elizabeth Warren in <em>All Your Worth</em>.</li>
-            <li><strong>Loan Calculations:</strong> Based on standard amortization formulas used by institutions like the USDA for home loans.</li>
-            <li><strong>The Importance of Financial Literacy: Opening a New Field:</strong> Lusardi, Annamaria, and Olivia S. Mitchell. 2023. "The Importance of Financial Literacy: Opening a New Field." Journal of Economic Perspectives 37 (4): 137–54.
-DOI: 10.1257/jep.37.4.137   https://www.aeaweb.org/articles?id=10.1257/jep.37.4.137</li>
-        </ul>
+            <div class="tool-card" style="max-width: 800px; margin: 20px auto; text-align: left;">
+                <h3 style="color: #2e7d32;">Finance Data</h3>
+                <ul>
+                    <li><strong>50/30/20 Rule:</strong> Popularized by Senator Elizabeth Warren in <em>All Your Worth</em>.</li>
+                    <li><strong>Loan Calculations:</strong> Based on standard amortization formulas used by institutions like the USDA for home loans.</li>
+                    <li><strong>The Importance of Financial Literacy: Opening a New Field:</strong> Lusardi, Annamaria, and Olivia S. Mitchell. 2023. "The Importance of Financial Literacy: Opening a New Field." Journal of Economic Perspectives 37 (4): 137–54.
+                        DOI: 10.1257/jep.37.4.137 https://www.aeaweb.org/articles?id=10.1257/jep.37.4.137</li>
+                </ul>
 
-        <h3 style="color: #2980b9;">Career Readiness</h3>
-        <ul>
-            <li><strong>Competencies:</strong> Based on the <strong>NACE</strong> (National Association of Colleges and Employers) career readiness standards.</li>
-            <li><strong>Resume Best Practices:</strong> Adapted from university career center guidelines and professional recruitment standards.</li>
-        </ul>
+                <h3 style="color: #2980b9;">Career Readiness</h3>
+                <ul>
+                    <li><strong>Competencies:</strong> Based on the <strong>NACE</strong> (National Association of Colleges and Employers) career readiness standards.</li>
+                    <li><strong>Resume Best Practices:</strong> Adapted from university career center guidelines and professional recruitment standards.</li>
+                </ul>
 
-        <h3 style="color: #8e44ad;">Digital Citizenship</h3>
-        <ul>
-            <li><strong>Online Safety:</strong> Concepts adapted from <strong>Common Sense Education</strong> frameworks.</li>
-            <li><strong>AI Detection:</strong> Research regarding GAN (Generative Adversarial Network) artifacts and anatomical inconsistencies in AI art.</li>
-        </ul>
-    </div>
-</section>
-        
+                <h3 style="color: #8e44ad;">Digital Citizenship</h3>
+                <ul>
+                    <li><strong>Online Safety:</strong> Concepts adapted from <strong>Common Sense Education</strong> frameworks.</li>
+                    <li><strong>AI Detection:</strong> Research regarding GAN (Generative Adversarial Network) artifacts and anatomical inconsistencies in AI art.</li>
+                </ul>
+            </div>
+        </section>
+
         <section id="module-content" class="hidden">
             <h2 id="module-title">Module Title</h2>
-            
+
             <div id="lecture-section" class="lpc-stage">
                 <h3>1. Learn</h3>
                 <p id="lecture-text">Core concepts will be presented here.</p>
@@ -419,14 +456,14 @@ DOI: 10.1257/jep.37.4.137   https://www.aeaweb.org/articles?id=10.1257/jep.37.4.
             </div>
 
             <div id="practice-section" class="lpc-stage hidden">
-    <h3>2. Practice</h3>
-    <p id="practice-text">Scenario description goes here...</p>
-    
-    <div id="practice-options" class="options-grid"></div>
-    <div id="practice-feedback" class="feedback-box hidden"></div>
+                <h3>2. Practice</h3>
+                <p id="practice-text">Scenario description goes here...</p>
 
-    <button id="next-to-quiz" class="hidden" onclick="nextStage('quiz-section')">Take the Quiz</button>
-</div>
+                <div id="practice-options" class="options-grid"></div>
+                <div id="practice-feedback" class="feedback-box hidden"></div>
+
+                <button id="next-to-quiz" class="hidden" onclick="nextStage('quiz-section')">Take the Quiz</button>
+            </div>
 
             <div id="quiz-section" class="lpc-stage hidden">
                 <h3>3. Quiz</h3>
@@ -436,7 +473,7 @@ DOI: 10.1257/jep.37.4.137   https://www.aeaweb.org/articles?id=10.1257/jep.37.4.
             </div>
         </section>
     </main>
-    
+
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
@@ -444,15 +481,15 @@ DOI: 10.1257/jep.37.4.137   https://www.aeaweb.org/articles?id=10.1257/jep.37.4.
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'en', 
-                includedLanguages: 'es', 
+                pageLanguage: 'en',
+                includedLanguages: 'es',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    
+
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>
