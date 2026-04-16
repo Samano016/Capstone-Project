@@ -382,6 +382,86 @@
       { "text": "To practice negotiating a salary.", "isCorrect": false, "feedback": "Incorrect. You are not interviewing for an open position during an informational interview." }
     ]
   },
+  "apprenticeships": {
+    "title": "Learning a Trade",
+    "lecture": "An apprenticeship is like a 'job with a teacher.' Instead of paying a college to sit in a desk, a company pays YOU to learn a skill like plumbing, electrical work, or car repair. You spend some time in a classroom and most of your time doing the actual work for a paycheck.",
+    "practice": "Scenario: You want to be a master electrician. You join a program where you work 4 days a week with a pro and go to class 1 day a week. You are getting paid while you learn. What is this?",
+    "choices": [
+      { "text": "A standard college degree.", "isCorrect": false, "feedback": "Nope! In college, you usually pay them. In an apprenticeship, they pay you." },
+      { "text": "An apprenticeship.", "isCorrect": true, "feedback": "Exactly! It’s a paid way to become an expert in a 'skilled trade'." },
+      { "text": "A volunteer hobby.", "isCorrect": false, "feedback": "Incorrect. This is a professional career path where you earn real money." }
+    ],
+    "quiz": "Question: Which of these is a 'skilled trade' that uses an apprenticeship?",
+    "quizChoices": [
+      { "text": "Construction Electrician", "isCorrect": true, "feedback": "Correct! This is a job that requires hands-on training and expert knowledge." },
+      { "text": "Working at a fast-food counter", "isCorrect": false, "feedback": "Incorrect. While it's a job, it doesn't usually require a years-long apprenticeship." },
+      { "text": "Playing video games", "isCorrect": false, "feedback": "Incorrect. That's a hobby, not a vocational trade." }
+    ]
+  },
+  "career_assessments": {
+    "title": "Finding Your 'Vibe'",
+    "lecture": "A career assessment is a personality test for your future. It asks questions about what you like (talking to people vs. working alone) and what you value (money vs. helping others). The goal is to give you a list of jobs that actually fit your personality.",
+    "practice": "Scenario: You take a test that says you hate being stuck inside and you love solving puzzles. It suggests you'd be a great 'Game Warden' or 'Engineer.' Why did you take this test?",
+    "choices": [
+      { "text": "To get a grade for my report card.", "isCorrect": false, "feedback": "Incorrect. This test isn't for a grade; it's to help you find a career path." },
+      { "text": "To find jobs that match my personality and interests.", "isCorrect": true, "feedback": "Spot on! It helps narrow down your choices so you don't pick a job you'll hate." },
+      { "text": "Because the computer wanted to guess my age.", "isCorrect": false, "feedback": "Incorrect. It's looking for your interests, not your age." }
+    ],
+    "quiz": "Question: Who can help you understand what your test results mean?",
+    "quizChoices": [
+      { "text": "A school counselor or career coach.", "isCorrect": true, "feedback": "Yes! They can help you turn those results into a real-world plan." },
+      { "text": "A random person on the bus.", "isCorrect": false, "feedback": "Incorrect. You want a professional who knows how these tests work." },
+      { "text": "No one; the test is just for fun.", "isCorrect": false, "feedback": "Incorrect. These are tools to help you make big life decisions!" }
+    ]
+  },
+  "learning_plans": {
+    "title": "Picking Your Own Classes",
+    "lecture": "An Individualized Learning Plan (ILP) is a map for high school. If you know you want to be a nurse, you don't want to take four years of choir—you want extra science and health classes. An ILP helps you pick the right classes now to reach your goal later.",
+    "practice": "Scenario: You want to be a YouTuber or a Filmmaker. You talk to your teacher and swap your 'Home Ec' class for 'Digital Media and Video Editing.' What are you doing?",
+    "choices": [
+      { "text": "Trying to get an easy 'A'.", "isCorrect": false, "feedback": "Incorrect. You are picking a class that actually helps your future career." },
+      { "text": "Creating a Learning Plan (ILP).", "isCorrect": true, "feedback": "Correct! You are matching your schoolwork to your future dreams." },
+      { "text": "Avoiding graduation.", "isCorrect": false, "feedback": "Incorrect. This actually helps you graduate with useful skills!" }
+    ],
+    "quiz": "Question: What is the main point of an ILP?",
+    "quizChoices": [
+      { "text": "To make sure you take classes that help you with your future job.", "isCorrect": true, "feedback": "Correct! It keeps you on track for college or your career." },
+      { "text": "To get out of doing math.", "isCorrect": false, "feedback": "Incorrect. You still have to do the basics, but you add classes you care about." },
+      { "text": "To decide what you're eating for lunch.", "isCorrect": false, "feedback": "Incorrect. It’s an academic plan, not a menu." }
+    ]
+  },
+  "internships": {
+    "title": "Testing a Career",
+    "lecture": "An internship is like a 'trial run' for a job. You work at a company for a few weeks or months to see if you actually like it. It’s the best way to see what a job is *really* like before you spend years studying for it.",
+    "practice": "Scenario: You think you want to be a lawyer, so you intern at a law firm. You realize you hate reading long papers and being in an office all day. Is this internship a failure?",
+    "choices": [
+      { "text": "Yes, because you wasted your time.", "isCorrect": false, "feedback": "Incorrect. You learned something very important!" },
+      { "text": "No, because you found out that career isn't for you before you spent money on law school.", "isCorrect": true, "feedback": "Exactly! Knowing what you DON'T want to do is just as important as knowing what you do." },
+      { "text": "Yes, because you didn't get a paycheck.", "isCorrect": false, "feedback": "Incorrect. Even if it's unpaid, the knowledge you gained is worth a lot of money." }
+    ],
+    "quiz": "Question: What is one of the biggest benefits of an internship?",
+    "quizChoices": [
+      { "text": "Getting a fancy job title to show your friends.", "isCorrect": false, "feedback": "Incorrect. The real value is the experience and connections." },
+      { "text": "Building a 'network' (meeting people who can help you get a job later).", "isCorrect": true, "feedback": "Correct! Meeting professionals is a huge help for your future." },
+      { "text": "Learning how to use the company vending machine.", "isCorrect": false, "feedback": "Incorrect. That's a perk, but not a career skill!" }
+    ]
+  },
+  "soft_skills": {
+    "title": "Being a Good Teammate",
+    "lecture": "Soft skills are your 'people skills.' They aren't about how well you use a computer; they are about how well you talk to others, lead a team, and handle stress. Every single job in the world requires these.",
+    "practice": "Scenario: A customer is angry because their food is cold. You listen to them, apologize, and stay calm while you fix the problem. What skill are you using?",
+    "choices": [
+      { "text": "A technical skill like cooking.", "isCorrect": false, "feedback": "Incorrect. Cooking the food is technical; handling the person is a 'soft skill'." },
+      { "text": "A soft skill like communication or problem-solving.", "isCorrect": true, "feedback": "Correct! These skills help you work well with customers and coworkers." },
+      { "text": "A math skill.", "isCorrect": false, "feedback": "Incorrect. This is about people, not numbers." }
+    ],
+    "quiz": "Question: Why are soft skills important for your future?",
+    "quizChoices": [
+      { "text": "Because they make you better at any job you ever have.", "isCorrect": true, "feedback": "Right! Whether you are a doctor or a plumber, you need to work well with others." },
+      { "text": "Because they are the only thing you need to get hired.", "isCorrect": false, "feedback": "Incorrect. You usually need 'hard skills' too, but soft skills keep the job." },
+      { "text": "They aren't important; only your grades matter.", "isCorrect": false, "feedback": "Incorrect. Employers often care more about your attitude and teamwork than your GPA." }
+    ]
+  },
   "digital_media_literacy": {
     "title": "Media Literacy & Fact Checking",
     "lecture": "Media literacy is the ability to critically evaluate the information you consume online. It involves checking sources, recognizing clickbait, and cross-referencing facts with reliable organizations before sharing.",
