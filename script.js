@@ -373,7 +373,10 @@ function updateStartAge() {
 function playRoulette(riskLevel) {
     // Stop the game when retirement age is reached
     if (currentAge >= retirementAge) return;
-
+    
+    // Game over if bankrupt or retirement age is reached
+    if (portfolio <= 0 || currentAge >= retirementAge) return;
+  
     const feedback = document.getElementById('roulette-feedback');
     const display = document.getElementById('portfolio-value');
     const wheel = document.getElementById('wheel-animation');
@@ -763,55 +766,30 @@ function checkPractice(choice) {
         nextBtn.classList.add('hidden'); // Keep the quiz hidden until correct
     }
 }
-//Disable home screen buttons until log in
+// Update the UI based on login status
 auth.onAuthStateChanged((user) => {
     const navButtons = document.querySelectorAll('.nav-btn');
+    const loginScreen = document.getElementById('login-screen');
+    const welcomeScreen = document.getElementById('welcome-screen');
 
     if (user) {
+        // Enable navigation and show home
         navButtons.forEach(btn => {
-
-          if (btn.id === 'dark-mode-toggle') {
-            btn.disabled = false;
-            btn.style.opacity = "1";
-            btn.style.cursor = "pointer";
-            return; // Dark Mode will still work
-        }
-          
             btn.disabled = false;
             btn.style.opacity = "1";
             btn.style.cursor = "pointer";
         });
-        showHome(); 
+        loginScreen.classList.add('hidden');
+        welcomeScreen.classList.remove('hidden');
+        console.log("Logged in as:", user.email);
     } else {
+        // Force login screen
         navButtons.forEach(btn => {
             btn.disabled = true;
             btn.style.opacity = "0.5";
             btn.style.cursor = "not-allowed";
         });
-        showHome();
+        welcomeScreen.classList.add('hidden');
+        loginScreen.classList.remove('hidden');
     }
 });
-
-function toggleDarkMode() {
-    const body = document.body;
-    const btn = document.getElementById('dark-mode-toggle');
-    
-    body.classList.toggle('dark-theme');
-    
-    // Save preference to localStorage
-    if (body.classList.contains('dark-theme')) {
-        localStorage.setItem('theme', 'dark');
-        btn.innerText = "Light Mode";
-    } else {
-        localStorage.setItem('theme', 'light');
-        btn.innerText = "Dark Mode";
-    }
-}
-
-// Saved user preference when page loads
-window.onload = function() {
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-theme');
-        document.getElementById('dark-mode-toggle').innerText = "Light Mode";
-    }
-};
